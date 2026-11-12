@@ -1,0 +1,109 @@
+# Autonomous Resource Collection Using Q-Learning
+
+An interactive reinforcement learning project that compares **Q-Learning**, **First Fit**, and **Optimal 0/1 Knapsack** on randomly generated resource environments.
+
+## Project Overview
+
+The objective is to collect resources with the highest possible total value while staying within a fixed carrying capacity of 50 units.
+
+Three approaches solve the same resource-selection problem:
+
+- **First Fit:** Greedily accepts a resource whenever it fits within the remaining capacity.
+- **Q-Learning:** Learns an accept-or-reject policy through repeated interaction with randomly generated resource environments.
+- **Optimal Knapsack:** Uses dynamic programming to calculate the maximum achievable value with complete knowledge of the available resources.
+
+## How It Works
+
+1. Generate a reproducible 10 × 10 resource map using a user-provided seed.
+2. Each resource has a randomly generated weight and value.
+3. The Q-Learning agent is trained over 50,000 episodes.
+4. All three algorithms evaluate the same resource sequence.
+5. Compare collected value, capacity utilisation, selected resources and optimality gap.
+
+## Reinforcement Learning
+
+The Q-Learning agent uses:
+
+- Tabular Q-Learning
+- Epsilon-greedy exploration
+- Learning rate (alpha): 0.1
+- Discount factor (gamma): 1.0
+- Reward based on the value of accepted resources
+- A discretised state representation containing remaining capacity, resource weight, resource value and progress stage
+
+## Performance Results
+
+Average results across 1,000 unseen test maps:
+
+| Algorithm | Average Total Value |
+|---|---:|
+| First Fit | 107.94 |
+| Q-Learning | 130.71 |
+| Optimal Knapsack | 173.46 |
+
+Q-Learning achieved approximately **21.1% higher average value than First Fit**, reaching approximately 75.4% of the average offline optimal value.
+
+The average per-map Q-Learning optimality gap was 24.22%.
+
+*Results are from the current 50,000-episode training configuration and 1,000-map evaluation.*
+
+## Tech Stack
+
+- Python
+
+- Streamlit
+- Pandas
+
+## Project Structure
+
+```text
+autonomous-resource-collection-rl/
+├── app.py
+├── main.py
+├── environment.py
+├── agent.py
+├── q_learning.py
+├── baselines.py
+├── experiments.py
+├── requirements.txt
+└── README.md
+```
+
+## Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/DARSHAN-debug777/autonomous-resource-collection-rl.git
+cd autonomous-resource-collection-rl
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Launch the application:
+
+```bash
+streamlit run app.py
+```
+
+## Limitations
+
+- The Q-Learning agent uses a tabular representation rather than a neural network.
+- Its state representation is approximate and does not include the complete future resource sequence.
+- Optimal Knapsack is an offline benchmark with access to all resources, while Q-Learning makes sequential decisions.
+
+## Future Improvements
+
+- Improve Q-Learning performance through controlled experiments.
+- Investigate richer state representations.
+- Compare different exploration strategies.
+- Analyse generalisation across unseen resource distributions.
+
+---
+
+**Project:** Autonomous Resource Collection Using Q-Learning  
+**Author:** Darshan Jain
