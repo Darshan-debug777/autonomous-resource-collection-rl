@@ -104,6 +104,19 @@ streamlit run app.py
 - Analyse generalisation across unseen resource distributions.
 
 ---
+# Autonomous Resource Collection Using Q-Learning
+
+<div align="center">
+
+### 🚀 Live Demo
+
+**[Launch Autonomous Resource Collection](https://autonomous-resource-collection-rl.streamlit.app/)**
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://autonomous-resource-collection-rl.streamlit.app/)
+
+</div>
+
+An interactive reinforcement learning project that compares **Q-Learning**, **First Fit**, and **Optimal 0/1 Knapsack** on randomly generated resource environments.
 
 **Project:** Autonomous Resource Collection Using Q-Learning  
 **Author:** Darshan Jain
