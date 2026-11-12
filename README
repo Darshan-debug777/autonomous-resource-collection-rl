@@ -103,7 +103,23 @@ streamlit run app.py
 - Compare different exploration strategies.
 - Analyse generalisation across unseen resource distributions.
 
----
+<div align="center">
+
+## 🚀 Live Interactive Demo
+
+Explore the Autonomous Resource Collection simulation directly in your browser.
+
+Enter a map seed to generate a reproducible resource environment and compare three approaches to resource selection:
+
+- **First Fit:** A greedy resource-selection strategy.
+- **Q-Learning:** A reinforcement learning agent trained to make accept-or-reject decisions.
+- **Optimal Knapsack:** A dynamic programming benchmark that calculates the maximum achievable resource value.
+
+Visualise the resource collection grids, compare total values and capacity utilisation, and examine the Q-Learning agent's optimality gap.
+
+### [🌐 Launch Live Application](https://autonomous-resource-collection-rl.streamlit.app/)
+
+</div>
 
 
 An interactive reinforcement learning project that compares **Q-Learning**, **First Fit**, and **Optimal 0/1 Knapsack** on randomly generated resource environments.
